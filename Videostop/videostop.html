@@ -1,0 +1,77 @@
+<html>
+<HEAD>
+
+    <title>Videostop</title>
+
+<SCRIPT LANGUAGE="JavaScript">
+    <!--
+        obr1 = new Image(150,150);
+        obr2.src = "./img/kostka1.png";
+        obr2 = new Image(150,150);
+        obr2.src = "./img/kostka2.png";
+        obr3 = new Image(150,150);
+        obr3.src = "./img/kostka3.png";   
+        obr4 = new Image(150,150);
+        obr4.src = "./img/kostka4.png";
+        obr5 = new Image(150,150);
+        obr5.src = "./img/kostka5.png";  
+        obr6 = new Image(150,150);
+        obr6.src = "./img/kostka6.png"; 
+        var Stop=false;
+        function Zmenit()
+        {
+            var i,j;
+            if(!Stop){
+                for (j=0; j<3; j++) {
+                    i=Math.random();
+                    i=Math.round(i*5);
+                    document.images[j].src="./img/kostka"+(i+1)+".png";
+
+                }
+                setTimeout("Zmenit()",500);
+
+            }else Vyhodnoceni();
+        }
+        function Vyhodnoceni();
+        {
+            with (document) {
+                if((images[0].src==images[1].src)&&(images[1].src==images[2].src )){
+                    alert ("Bingo !!!!");
+
+                }else {
+                    if((images[0].src==images[1].src || (images[1].src==images[2].src))|| (images[0].src==images[2].src)){
+                        alert("Gratuluji, máte bod");
+                     }else alert ("Bohuzel, ztrácíte bod. Zkuste to znovu");
+                    }
+                         
+                }
+                Stop=!Stop;
+                Zmenit();
+
+            }
+        
+
+
+    -->
+</SCRIPT>
+</HEAD>
+<BODY onLoad="Zmenit()">
+    <CENTER>
+        <H1>Videostop</H1>
+        <TABLE ALIGN="center" CELLSPACING="2" CELLPADING="2" BORDER="2">
+            <TR>
+                <TD><IMG SRC="./img/kostka1.png"></TD>
+                <TD><IMG SRC="./img/kostka1.png"></TD>
+                <TD><IMG SRC="./img/kostka1.png"></TD>   
+
+            </TR>
+        </TABLE>
+        <BR>
+            <FORM NAME ="ovladac">
+                <INPUT TYPE="BUTTON" NAME="Stop" VALUE="STOP"onClick="Stop=!Stop">
+                    
+            </FORM>
+    </CENTER>
+    
+</BODY>
+</htm>
